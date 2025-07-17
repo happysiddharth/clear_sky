@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_alerts"
+    app:startDestination="@id/alertsFragment">
+
+    <fragment
+        android:id="@+id/alertsFragment"
+        android:name="com.weather.clearsky.feature.alerts.presentation.fragment.AlertsFragment"
+        android:label="Weather Alerts"
+        tools:layout="@layout/fragment_alerts">
+        
+        <action
+            android:id="@+id/action_alerts_to_create_alert"
+            app:destination="@id/createAlertFragment" />
+            
+        <action
+            android:id="@+id/action_alerts_to_edit_alert"
+            app:destination="@id/createAlertFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createAlertFragment"
+        android:name="com.weather.clearsky.feature.alerts.presentation.fragment.CreateAlertFragment"
+        android:label="Create Alert"
+        tools:layout="@layout/fragment_create_alert">
+        
+        <argument
+            android:name="alertId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        
+        <deepLink app:uri="clearsky://alerts/create" />
+        <deepLink app:uri="clearsky://alerts/edit/{alertId}" />
+    </fragment>
+
+</navigation> 

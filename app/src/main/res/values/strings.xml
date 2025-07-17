@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Clear Sky</string>
+    <string name="weather_widget_description">Shows current weather for your location</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/_8sdp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- Time -->
+    <TextView
+        android:id="@+id/tv_hour_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 PM"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:layout_marginBottom="@dimen/_4sdp" />
+
+    <!-- Weather Icon -->
+    <TextView
+        android:id="@+id/tv_hour_icon"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:text="☀️"
+        android:textSize="@dimen/_18ssp"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_4sdp" />
+
+    <!-- Temperature -->
+    <TextView
+        android:id="@+id/tv_hour_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24°"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="@dimen/_2sdp" />
+
+    <!-- Precipitation Chance -->
+    <TextView
+        android:id="@+id/tv_precipitation_chance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20%"
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/primary_color"
+        android:visibility="gone" />
+
+</LinearLayout> 

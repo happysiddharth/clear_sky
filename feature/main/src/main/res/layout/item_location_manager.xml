@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    app:cardCornerRadius="@dimen/_8sdp"
+    app:cardElevation="@dimen/_2sdp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_16sdp"
+        android:gravity="center_vertical">
+
+        <!-- Drag Handle -->
+        <ImageView
+            android:id="@+id/iv_drag_handle"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:contentDescription="Drag to reorder"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:alpha="0.6" />
+
+        <!-- Current Location Indicator -->
+        <TextView
+            android:id="@+id/tv_current_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📍"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:visibility="gone" />
+
+        <!-- Location Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_location_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New York"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_location_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="United States"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_2sdp" />
+
+        </LinearLayout>
+
+        <!-- Order Controls -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_move_up"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:src="@android:drawable/ic_media_previous"
+                android:rotation="90"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Move up"
+                android:alpha="0.7" />
+
+            <ImageButton
+                android:id="@+id/btn_move_down"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:src="@android:drawable/ic_media_next"
+                android:rotation="90"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Move down"
+                android:alpha="0.7" />
+
+        </LinearLayout>
+
+        <!-- Delete Button -->
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete location"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:alpha="0.7" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView> 

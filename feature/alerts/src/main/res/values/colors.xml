@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Theme Colors - Light Mode -->
+    <color name="primary_color">#1976D2</color>
+    <color name="accent_color">#388E3C</color>
+    <color name="secondary_color">#F57C00</color>
+    
+    <!-- Text Colors - Light Mode -->
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    
+    <!-- Background Colors - Light Mode -->
+    <color name="background_color">#FAFAFA</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="warning_background">#FFF3E0</color>
+    
+    <!-- Surface Colors - Light Mode -->
+    <color name="surface_color">#FFFFFF</color>
+    <color name="surface_variant">#F5F5F5</color>
+    <color name="on_surface">#212121</color>
+    <color name="on_surface_variant">#757575</color>
+    
+    <!-- Alert Status Colors - Light Mode -->
+    <color name="alert_active">#4CAF50</color>
+    <color name="alert_pending">#FF9800</color>
+    <color name="alert_triggered">#F44336</color>
+    <color name="alert_expired">#9E9E9E</color>
+</resources> 

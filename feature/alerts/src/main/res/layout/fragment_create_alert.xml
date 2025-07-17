@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/background_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_16sdp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tv_header_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Weather Alert"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="@dimen/_24sdp"
+            android:gravity="center" />
+
+        <!-- Alert Title -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_alert_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:hint="Alert Title"
+            app:startIconDrawable="@android:drawable/ic_dialog_info"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_alert_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Alert Description -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_alert_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:hint="Description (Optional)"
+            app:startIconDrawable="@android:drawable/ic_menu_edit"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_alert_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:maxLines="3" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Alert Type -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alert Type"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="@dimen/_8sdp" />
+
+        <Spinner
+            android:id="@+id/spinner_alert_type"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:background="@drawable/spinner_background"
+            android:padding="@dimen/_12sdp" />
+
+        <!-- Alert Condition Container -->
+        <LinearLayout
+            android:id="@+id/ll_condition_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/_16sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alert Condition"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"
+                android:layout_marginBottom="@dimen/_8sdp" />
+
+            <!-- Condition Operator -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/_12sdp">
+
+                <Spinner
+                    android:id="@+id/spinner_condition_operator"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_48sdp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:background="@drawable/spinner_background"
+                    android:padding="@dimen/_12sdp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_condition_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Value"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_condition_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!-- Weather Condition Spinner (for weather condition type alerts) -->
+            <Spinner
+                android:id="@+id/spinner_weather_condition"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/spinner_background"
+                android:padding="@dimen/_12sdp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!-- Location Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="@dimen/_8sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_16sdp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:hint="City or Location"
+                app:startIconDrawable="@android:drawable/ic_menu_mylocation"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="Current Location" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_current_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current"
+                android:textSize="@dimen/_12ssp"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+
+        </LinearLayout>
+
+        <!-- Date and Time -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alert Timing"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="@dimen/_8sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_16sdp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_target_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:hint="Target Date"
+                app:startIconDrawable="@android:drawable/ic_menu_today"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_target_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_target_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Target Time"
+                app:startIconDrawable="@android:drawable/ic_menu_recent_history"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_target_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!-- Expiry Date (Optional) -->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cb_has_expiry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set expiry date"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="@dimen/_8sdp" />
+
+        <LinearLayout
+            android:id="@+id/ll_expiry_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_expiry_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:hint="Expiry Date"
+                app:startIconDrawable="@android:drawable/ic_menu_today"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_expiry_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_expiry_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Expiry Time"
+                app:startIconDrawable="@android:drawable/ic_menu_recent_history"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_expiry_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!-- Repeat Settings -->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cb_is_repeating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repeat this alert"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="@dimen/_8sdp" />
+
+        <Spinner
+            android:id="@+id/spinner_repeat_interval"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:background="@drawable/spinner_background"
+            android:padding="@dimen/_12sdp"
+            android:visibility="gone" />
+
+        <!-- Notification Settings -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notification Settings"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="@dimen/_8sdp" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cb_notification_enabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable notifications"
+            android:textColor="@color/primary_text"
+            android:checked="true"
+            android:layout_marginBottom="@dimen/_8sdp" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cb_notification_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play notification sound"
+            android:textColor="@color/primary_text"
+            android:checked="true"
+            android:layout_marginBottom="@dimen/_8sdp" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cb_notification_vibration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable vibration"
+            android:textColor="@color/primary_text"
+            android:checked="true"
+            android:layout_marginBottom="@dimen/_24sdp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:layout_marginEnd="@dimen/_8sdp"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_create_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Alert"
+                style="@style/Widget.Material3.Button" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView> 

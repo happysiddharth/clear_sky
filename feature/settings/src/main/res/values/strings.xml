@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Settings Headers -->
+    <string name="settings_general">General</string>
+    <string name="settings_cards">Weather Cards</string>
+    <string name="settings_features">Features</string>
+    <string name="settings_data">Data &amp; Storage</string>
+    <string name="settings_about">About</string>
+
+    <!-- General Settings -->
+    <string name="settings_temperature_unit">Temperature Unit</string>
+    <string name="settings_temperature_unit_desc">Choose temperature display unit</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_desc">Choose app appearance</string>
+    <string name="settings_update_frequency">Update Frequency</string>
+    <string name="settings_update_frequency_desc">How often to refresh weather data</string>
+
+    <!-- Card Settings -->
+    <string name="settings_show_temperature_card">Temperature Card</string>
+    <string name="settings_show_air_quality_card">Air Quality Card</string>
+    <string name="settings_show_humidity_card">Humidity Card</string>
+    <string name="settings_show_wind_card">Wind Card</string>
+    <string name="settings_show_uv_card">UV Index Card</string>
+    <string name="settings_show_forecast_card">Forecast Card</string>
+
+    <!-- Feature Settings -->
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications_desc">Receive weather alerts and updates</string>
+    <string name="settings_location_services">Location Services</string>
+    <string name="settings_location_services_desc">Use device location for weather</string>
+    <string name="settings_widget_updates">Widget Updates</string>
+    <string name="settings_widget_updates_desc">Automatically update widgets</string>
+
+    <!-- Data Settings -->
+    <string name="settings_clear_cache">Clear Cache</string>
+    <string name="settings_clear_cache_desc">Remove stored weather data</string>
+    <string name="settings_reset">Reset Settings</string>
+    <string name="settings_reset_desc">Reset all settings to defaults</string>
+    <string name="settings_export">Export Settings</string>
+    <string name="settings_export_desc">Backup your preferences</string>
+
+    <!-- About Settings -->
+    <string name="settings_version">Version</string>
+    <string name="settings_rate_app">Rate App</string>
+    <string name="settings_rate_app_desc">Rate us on Google Play</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+
+    <!-- Dialogs -->
+    <string name="settings_reset_dialog_title">Reset Settings</string>
+    <string name="settings_reset_dialog_message">Are you sure you want to reset all settings to defaults? This action cannot be undone.</string>
+    <string name="settings_clear_cache_dialog_title">Clear Cache</string>
+    <string name="settings_clear_cache_dialog_message">This will remove all cached weather data. Continue?</string>
+
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">Reset</string>
+    <string name="clear">Clear</string>
+    <string name="export">Export</string>
+    <string name="import_text">Import</string>
+    
+    <!-- Messages -->
+    <string name="settings_reset_success">Settings reset to defaults</string>
+    <string name="settings_cache_cleared">Cache cleared successfully</string>
+    <string name="settings_export_success">Settings exported successfully</string>
+    <string name="settings_import_success">Settings imported successfully</string>
+    <string name="settings_action_failed">Failed to perform action</string>
+</resources> 

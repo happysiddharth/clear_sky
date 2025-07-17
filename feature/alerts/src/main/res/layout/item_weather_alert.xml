@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_12sdp"
+    app:cardElevation="@dimen/_4sdp"
+    app:strokeWidth="@dimen/_1sdp"
+    app:strokeColor="@color/primary_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16sdp">
+
+        <!-- Alert Type Icon -->
+        <TextView
+            android:id="@+id/tv_alert_icon"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:gravity="center"
+            android:textSize="@dimen/_20ssp"
+            android:background="@drawable/circle_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="🌡️" />
+
+        <!-- Alert Title -->
+        <TextView
+            android:id="@+id/tv_alert_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="@id/tv_alert_icon"
+            app:layout_constraintStart_toEndOf="@id/tv_alert_icon"
+            app:layout_constraintEnd_toStartOf="@id/switch_active"
+            tools:text="High Temperature Alert" />
+
+        <!-- Alert Location -->
+        <TextView
+            android:id="@+id/tv_alert_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/secondary_text"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/tv_alert_title"
+            app:layout_constraintStart_toEndOf="@id/tv_alert_icon"
+            app:layout_constraintEnd_toStartOf="@id/switch_active"
+            tools:text="📍 New York, USA" />
+
+        <!-- Active Switch -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_active"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/tv_alert_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:checked="true" />
+
+        <!-- Alert Condition -->
+        <TextView
+            android:id="@+id/tv_alert_condition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/primary_text"
+            android:background="@drawable/condition_background"
+            android:padding="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_alert_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="When temperature > 35°C" />
+
+        <!-- Target Date/Time -->
+        <LinearLayout
+            android:id="@+id/layout_datetime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_alert_condition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🗓️"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginEnd="@dimen/_4sdp" />
+
+            <TextView
+                android:id="@+id/tv_target_datetime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/secondary_text"
+                tools:text="July 20, 2024 at 2:00 PM" />
+
+            <!-- Status Badge -->
+            <TextView
+                android:id="@+id/tv_status_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/status_badge_background"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                tools:text="ACTIVE" />
+
+        </LinearLayout>
+
+        <!-- Last Triggered (if applicable) -->
+        <TextView
+            android:id="@+id/tv_last_triggered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/secondary_text"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/layout_datetime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="⚡ Last triggered: July 19, 2024 at 3:15 PM"
+            tools:visibility="visible" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:id="@+id/layout_actions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:orientation="horizontal"
+            android:gravity="end"
+            app:layout_constraintTop_toBottomOf="@id/tv_last_triggered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_edit"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="Edit"
+                android:textSize="@dimen/_12ssp"
+                android:minWidth="0dp"
+                android:paddingHorizontal="@dimen/_12sdp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_delete"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_32sdp"
+                android:text="Delete"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@android:color/holo_red_dark"
+                android:minWidth="0dp"
+                android:paddingHorizontal="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView> 
